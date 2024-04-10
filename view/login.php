@@ -5,28 +5,31 @@ include '../controller/logincontrol.php';
 <!DOCTYPE html>
 <html>
     <head>
-      <h1> Login </h1>
+        <link rel="stylesheet" href="../css/login.css">
+        
     </head>
 
         <body>
-
-          <form action="" method="POST">
+        <h1> Login </h1>
+          <form action="" method="POST" onlogin="return validateForm()">
           <fieldset>
               <table>
                 <tr>
                     <td><label> Email Address: </label></td>
-                    <td><input type="text" name="email"></td>
+                    <td><input type="text" name="email" id="email"> <div id ="emailerror"></div></td>
                 </tr>
 
                 <tr>
                     <td><label> Password: </label></td>
-                    <td><input type="password" name="pass"></td>
+                    <td><input type="password" name="pass" id="pass"> <div id ="emailerror"></div></td>
                 </tr>
 
                 <tr>
-                    <td><td><input type="submit" name="login" value="Login"></td></td>
+                    <td><td><input type="submit" name="login" class="button submit" value="Login"></td></td>
                 </tr>
               </table>
           </fieldset>
+
+          <script src="../js/login.js"></script>
         </body>
 </html>
