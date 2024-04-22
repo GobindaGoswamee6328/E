@@ -8,13 +8,13 @@ include '../controller/deleteemployee.php';
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Delete Employee</title>
+       <link rel="stylesheet" href="../css/deleteemployee.css">
     </head>
 
     <body>
         <form method="POST" action="">
-            <fieldset>
-                <legend><h1>Delete Employee</h1></legend>
+        
+                <h1>Delete Employee</h1>
                 <table>
                     <tr>
                         <td>Enter Nid for Delete Data : </td>
@@ -30,7 +30,6 @@ include '../controller/deleteemployee.php';
                 showData($result3);
 
                 ?>
-            </fieldset>
         </form>
     </body>
 </html>

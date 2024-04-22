@@ -8,13 +8,12 @@ include '../controller/searchemployeenid.php';
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Search Employee Nid</title>
+       <link rel="stylesheet" href="../css/searchemployee.css">
     </head>
 
     <body>
         <form method="POST" action="">
-            <fieldset>
-                <legend><h1>Search Employee Nid : </h1></legend>
+                <h1>Search Employee Nid : </h1>
                 <table>
                     <tr>
                         <td>Search Employee by Nid No : </td>
@@ -29,7 +28,6 @@ include '../controller/searchemployeenid.php';
                 <?php 
                 getShowSearchData($result);
                 ?>
-            </fieldset>
         </form>
     </body>
 </html>

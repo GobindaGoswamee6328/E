@@ -8,13 +8,13 @@ include '../controller/deletevaccinated.php';
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Delete Vaccinated List</title>
+       <link rel="stylesheet" href="../css/deletevaccinated.css">
     </head>
 
     <body>
         <form method="POST" action="">
-            <fieldset>
-                <legend><h1>Delete Vaccinated List</h1></legend>
+            
+            <h1>Delete Vaccinated List</h1>
                 <table>
                     <tr>
                         <td>Enter Registration Number for Delete Data : </td>
@@ -26,7 +26,6 @@ include '../controller/deletevaccinated.php';
                     </tr>
                 </table>
                 
-            </fieldset>
         </form>
     </body>
 </html>

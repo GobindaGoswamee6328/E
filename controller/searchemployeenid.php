@@ -28,7 +28,7 @@ if(isset($_REQUEST['searchBox'])){
          function getShowSearchData($result)
          {
             echo("<table>");
-            echo("<th>Name</th> <th>Nid No</th> <th>Nationality</th> <th>Email Address</th> <th>Password</th> <th>Date of Birth</th> <th>Contract Number</th> <th>Gender</th> <th>Address</th>");
+            echo("<th>Name</th> <th>Nid</th> <th>Nationality</th> <th>Email </th> <th>Password</th> <th>Date of Birth</th> <th>Number</th> <th>Gender</th> <th>Address</th>");
 
             foreach($result as $row){
                 echo("<tr>");

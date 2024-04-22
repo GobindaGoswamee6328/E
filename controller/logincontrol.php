@@ -27,7 +27,7 @@ if(isset($_REQUEST["login"]))
         else
         {
             echo "User Found!";
-            header("Location:../view/registration.php");
+            header("Location:../view/dashboard.php");
         }
     }
 }

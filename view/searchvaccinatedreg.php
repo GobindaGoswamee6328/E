@@ -8,13 +8,12 @@ include '../controller/searchvaccinatedreg.php';
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Search Registration Number</title>
+       <link rel="stylesheet" href="../css/searchvaccinated.css">
     </head>
 
     <body>
         <form method="POST" action="">
-            <fieldset>
-                <legend><h1>Search Reqistration Number : </h1></legend>
+            <h1>Search Reqistration Number : </h1>
                 <table>
                     <tr>
                         <td>Search Vaccinated List by Reg No : </td>
@@ -29,7 +28,6 @@ include '../controller/searchvaccinatedreg.php';
                 <?php 
                 getShowSearchData($result);
                 ?>
-            </fieldset>
         </form>
     </body>
 </html>

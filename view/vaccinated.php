@@ -6,6 +6,9 @@ include '../controller/vaccinatedcontrol.php';
 ?>
 <!DOCTYPE html>
 <html>
+<head>
+<link rel="stylesheet" href="../css/addvaccinated.css">
+</head>
   <body>
     <form action="" method="POST">
         <fieldset>

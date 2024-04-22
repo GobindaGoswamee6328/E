@@ -5,10 +5,13 @@ include '../controller/employeecontrol.php';
 ?>
 <!DOCTYPE html>
 <html>
+<head>
+    <link rel="stylesheet" href="../css/addemployee.css">
+</head>
   <body>
     <form action="" method="POST">
         <fieldset>
-          <legend><h1> New Employee </h1></legend>
+          <legend><h1> Add Employee </h1></legend>
             <table>
                 <tr>
                     <td><label> Name: </label></td>
@@ -76,6 +79,7 @@ include '../controller/employeecontrol.php';
         </fieldset>
     </form>
 
+    
     <form>
           <fieldset>
             <table>

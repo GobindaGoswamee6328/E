@@ -30,6 +30,14 @@ class Model
       return $result;
     }
 
+    function ShowEmployeeInformation($conn,$table)
+    {
+      $sql = "SELECT * FROM $table"; 
+
+      $result = $conn->query($sql);
+      return $result;
+    }
+
     function SearchEmployeeNid($conn,$table,$searchData)
     {
       $sql = "SELECT * FROM $table WHERE nid LIKE '$searchData'";
@@ -103,10 +111,7 @@ class Model
 
       $result = $conn->query($sql);
       return $result;
-    }
-
-
-    
+    }  
 
 }
 

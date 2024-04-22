@@ -37,16 +37,15 @@ if(isset($_REQUEST['searchBox'])){
                 echo("<td>".$row['gender']."</td>");
                 echo("<td>".$row['nmbr']."</td>");
                 echo("<td>".$row['registration']."</td>");
-                echo("<td>".$row['address']."</td");
+                echo("<td>".$row['address']."</td>");
                 echo("<td>".$row['hospital']."</td>");
                 echo("<td>".$row['vaccine']."</td>");
                 echo("<td>".$row['vaccinated']."</td>");
                 echo("</tr>");
             }
-
+        
             echo("</table>");
         }
-
     }
     }
 }
