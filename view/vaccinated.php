@@ -10,63 +10,60 @@ include '../controller/vaccinatedcontrol.php';
 <link rel="stylesheet" href="../css/addvaccinated.css">
 </head>
   <body>
-    <form action="" method="POST">
+    <form action="" method="POST" onsubmit="return validateForm()">
         <fieldset>
           <legend><h1> Vaccinated People </h1></legend>
+          <p id="display"></p>
             <table>
                 <tr>
                     <td><label> Name: </label></td>
-                    <td><input type="text" name="name">
+                    <td><input type="text" name="name" id="name">
                     <?php echo $nameError;?></td>
                 </tr>
 
                 <tr>
-                    <td><label> Age: </label></td>
-                    <td><input type="text" name="age">
-                    <?php echo $ageError;?></td>
-                </tr>
-
-                <tr>
                     <td><label> Gender: </label></td>
-                    <td><input type="radio" name="gender" value="male">Male
-                    <input type="radio" name="gender" value="female">Female
-                    <input type="radio" name="gender" value="other">Other
+                    <td><input type="radio" name="gender" value="male" id="genderMale">Male
+                    <input type="radio" name="gender" value="female" id="genderFemale">Female
+                    <input type="radio" name="gender" value="other" id="genderOther">Other
                     <?php echo $genderError;?></td>
                 </tr>
 
                 <tr>
-                    <td><label> Registration NO: </label></td>
-                    <td><input type="text" name="nmbr">
+                    <td><label> RegistrationNO: </label></td>
+                    <td><input type="text" name="nmbr" id="nmbr">
                     <?php echo $nmbrError;?></td>
                 </tr>
 
                 <tr>
-                    <td><label> Registration Date: </label></td>
-                    <td><input type="date" name="registration">
+                    <td><label> RegistrationDate: </label></td>
+                    <td><input type="date" name="registration" id="registration">
                     <?php echo $registrationError;?></td>
                 </tr>
 
                 <tr>
                     <td><label> Address: </label></td>
-                    <td><textarea rows="3" cols="30" name="address"></textarea>
+                    <td><textarea rows="3" cols="30" name="address" id="address"></textarea>
                     <?php echo $addressError;?></td>
                 </tr>
 
                 <tr>
-                    <td><label> Hospital Name: </label></td>
-                    <td><input type="text" name="hospital">
+                    <td><label> HospitalName: </label></td>
+                    <td><input type="text" name="hospital" id="hospital">
                     <?php echo $hospitalError;?></td>
                 </tr>
 
                 <tr>
-                    <td><label> Vaccine Name: </label></td>
-                    <td><input type="text" name="vaccine">
+                    <td><label> VaccineName: </label></td>
+                    <td><input type="text" name="vaccine" id="vaccine">
+                    <a href="../view/updatename.php">Update</a></td></td>
                     <?php echo $vaccineError;?></td>
                 </tr>
 
                 <tr>
-                    <td><label> Vaccinated Date: </label></td>
-                    <td><input type="date" name="vaccinated">
+                    <td><label> VaccinatedDate: </label></td>
+                    <td><input type="date" name="vaccinated" id="vaccinated">
+                    <a href="../view/updatedate.php">Update</a></td></td>
                     <?php echo $vaccinatedError;?></td>
                 </tr>
                 
@@ -86,11 +83,6 @@ include '../controller/vaccinatedcontrol.php';
             <tr>
                 <td> Name: </td>
                 <td><?php echo $name;?>
-            </tr>
-
-            <tr>
-                <td> Age: </td>
-                <td><?php echo $age;?>
             </tr>
 
             <tr>
@@ -127,12 +119,11 @@ include '../controller/vaccinatedcontrol.php';
                 <td> Vaccinated Date: </td>
                 <td><?php echo $vaccinated;?>
             </tr>
-
-            
             </table>
-
           </fieldset>
 
         </form>
+
+        <script src="../js/addvaccinated.js"></script>
     </body>
 </html>

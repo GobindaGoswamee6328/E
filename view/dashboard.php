@@ -10,10 +10,6 @@
 
     <div class="menubar">
     <table>
-        
-        <tr>
-            <td><button onclick="window.location.href='employee.php'">Add Employee</button></td>
-        </tr>
 
         <tr>
             <td><button onclick="window.location.href='showemployee.php'">Show Employee</button></td>

@@ -7,9 +7,9 @@ include '../controller/searchvaccinatedname.php';
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Search Vaccinated Name</title>
-    </head>
+<head>
+       <link rel="stylesheet" href="../css/searchvaccinatedname.css">
+</head>
 
     <body>
         <form method="POST" action="">

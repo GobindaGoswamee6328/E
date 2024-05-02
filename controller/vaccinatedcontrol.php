@@ -1,10 +1,9 @@
 <?php
-
 include '../model/mydb.php';
 
-$name=$age=$gender=$nmbr=$registration=$address=$hospital=$vaccine=$vaccinated=$haserror="";
-$nameError=$ageError=$genderError=$nmbrError=$registrationError=$addressError=$hospitalError=$vaccineError=$vaccinatedError="";
-$ageValidation=$addressValidation="";
+$name=$gender=$nmbr=$registration=$address=$hospital=$vaccine=$vaccinated=$haserror="";
+$nameError=$genderError=$nmbrError=$registrationError=$addressError=$hospitalError=$vaccineError=$vaccinatedError="";
+$addressValidation="";
 
 if(isset($_REQUEST["SUBMIT"]))
 {
@@ -20,20 +19,9 @@ if(isset($_REQUEST["SUBMIT"]))
     {
       $nameError= "Invalid Name!";
     }
-  }
-
-  if(empty($_REQUEST["age"]))
-  {
-    $ageError = "*Age Required";
-  }
-  else
-  {
-    $age = $_REQUEST["age"];
-
-    $ageValidation = strlen($age);  
-    if ($ageValidation > 3)
+    else
     {
-      $ageError = "Invalid Age!";
+      $name = $_REQUEST['name'];
     }
   }
 
@@ -46,6 +34,7 @@ if(isset($_REQUEST["SUBMIT"]))
     $gender = $_REQUEST["gender"];
   }
 
+
   if(empty($_REQUEST["nmbr"]))
   {
     $nmbrError = "*Number Required";
@@ -55,11 +44,16 @@ if(isset($_REQUEST["SUBMIT"]))
   {
     $nmbr = $_REQUEST["nmbr"];
 
-    if (!preg_match ("/^\d{11}$/", $nmbr))
+    if (!preg_match ("/^\d{5}$/", $nmbr))
     {
       $nmbrError = "Invalid Nmbr!";
     }
+    else
+    {
+      $nmbr = $_REQUEST["nmbr"];
+    }
   }
+
 
   if(empty($_REQUEST["registration"]))
   {
@@ -69,7 +63,8 @@ if(isset($_REQUEST["SUBMIT"]))
   {
     $registration = $_REQUEST["registration"];
   }
-  
+
+
   if(empty($_REQUEST["address"]))
   {
     $addressError = "*Address Required";
@@ -83,9 +78,13 @@ if(isset($_REQUEST["SUBMIT"]))
     {
       $addressError = "Invalid Address!";
     }
+    else
+    {
+      $address = $_REQUEST["address"];
+    }
   }
 
-  if(empty($_REQUEST['hospital']))
+    if(empty($_REQUEST['hospital']))
   {
     $hospitalError= "*Hospital Name Required!";
   }
@@ -96,6 +95,10 @@ if(isset($_REQUEST["SUBMIT"]))
     if(!preg_match("/^[a-zA-z]*$/", $hospital))
     {
       $hospitalError= "Invalid Hospital Name!";
+    }
+    else
+    {
+      $hospital=$_REQUEST['hospital'];
     }
   }
 
@@ -111,6 +114,10 @@ if(isset($_REQUEST["SUBMIT"]))
     {
       $vaccineError= "Invalid Vaccine Name!";
     }
+    else
+    {
+      $vaccine=$_REQUEST['vaccine'];
+    }
   }
 
   if(empty($_REQUEST["vaccinated"]))
@@ -122,27 +129,24 @@ if(isset($_REQUEST["SUBMIT"]))
     $vaccinated = $_REQUEST["vaccinated"];
   }
 
+
   if($haserror!=1)
   {
-     $mydbadd2 = new Model();
-     $conobj3 = $mydbadd2->OpenCon();
-     $result3=$mydbadd2->AddVaccine($conobj3,"vaccinated",$_REQUEST["name"],$_REQUEST["age"],$_REQUEST["gender"],
-     $_REQUEST["nmbr"], $_REQUEST["registration"],$_REQUEST["address"],$_REQUEST["hospital"], $_REQUEST["vaccine"],$_REQUEST["vaccinated"]);
- 
-     if($result3===TRUE)
+    $mydbadd2 = new Model();
+    $conobj3 = $mydbadd2->OpenCon();
+    $result3=$mydbadd2->AddVaccine($conobj3,"vaccinated",$_REQUEST["name"],$_REQUEST["gender"],
+    $_REQUEST["nmbr"], $_REQUEST["registration"],$_REQUEST["address"],$_REQUEST["hospital"], $_REQUEST["vaccine"],$_REQUEST["vaccinated"]);
+
+    if($result3===TRUE)
     {
-       echo "Successfully Added";
+       echo "Successfully Added!";
     }
    else
    {
       echo "Error Occurred".$conobj3->error;
    }
- }
-   else
-   {
-      echo "Please complete the validation ";
-   }
 
+  }
 }
 
 ?>

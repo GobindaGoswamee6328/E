@@ -4,15 +4,8 @@ class Model
 
     function OpenCon()
     {
-      $conn= new mysqli("localhost","root","","details");
+      $conn= new mysqli("localhost","root","","e_vaccine");
       return $conn;
-    }
-    function AddEmployee($conn,$table, $name, $id,$nationality,$email,$pass,$birth,$blood,$nmbr,$gender,$address)
-    {
-        $sql="INSERT INTO $table(name,id, nationality, email, password,birthdate,bloodgroup,nmbr,gender,address) VALUES 
-        ('$name', '$id', '$nationality','$email','$pass','$birth','$blood', '$nmbr','$gender','$address')";
-       $result= $conn->query($sql);
-       return $result;
     }
 
     function checklogin($conn,$table,$email,$pass){
@@ -72,10 +65,10 @@ class Model
       return $result;
   }
 
-    function AddVaccine($conn,$table, $name, $age,$gender,$nmbr,$registration,$address,$hospital,$vaccine,$vaccinated)
+    function AddVaccine($conn,$table, $name,$gender,$nmbr,$registration,$address,$hospital,$vaccine,$vaccinated)
     {
-      $sql="INSERT INTO $table (name,age, gender, nmbr, registration,address,hospital,vaccine,vaccinated) VALUES 
-      ('$name','age','$gender','$nmbr','$registration','$address', '$hospital','$vaccine','$vaccinated')";
+      $sql="INSERT INTO $table (name, gender, nmbr, registration,address,hospital,vaccine,vaccinated) VALUES 
+      ('$name','$gender','$nmbr','$registration','$address', '$hospital','$vaccine','$vaccinated')";
 
       $result = $conn->query($sql);
       return $result;
@@ -112,6 +105,20 @@ class Model
       $result = $conn->query($sql);
       return $result;
     }  
+
+    public function UpdateVaccineName($conn, $table, $nmbr, $new_vaccine)
+    {
+      $sql = "UPDATE $table SET vaccine='$new_vaccine' WHERE nmbr='$nmbr'";
+      $result = $conn->query($sql);
+      return $result;
+    }
+  
+    public function UpdateVaccinatedDate($conn, $table, $nmbr, $new_vaccinated)
+  {
+      $sql = "UPDATE $table SET vaccinated='$new_vaccinated' WHERE nmbr='$nmbr'";
+      $result = $conn->query($sql);
+      return $result;
+  }
 
 }
 

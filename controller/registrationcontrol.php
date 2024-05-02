@@ -1,15 +1,18 @@
 <?php
 include '../model/mydb.php';
 
-$name=$id=$nationality=$email=$pass=$birth=$blood=$nmbr=$gender=$address=$haserror="";
-$nameError=$idError=$nationalityError=$emailError=$passError=$birthError=$bloodError=$nmbrError=$genderError=$addressError="";
-$idValidation=$emailValidation=$passValidation=$addressValidation="";
+$name=$nid=$nationality=$email=$pass=$birth=$nmbr=$gender=$address=$haserror="";
+$nameError=$nidError=$nationalityError=$emailError=$passError=$birthError=$nmbrError=$genderError=$addressError="";
+$nidValidation=$emailValidation=$passValidation=$addressValidation="";
 
-if(isset($_REQUEST["SUBMIT"]))
+if(isset($_REQUEST["ADD"]))
 {
-  if(empty($_REQUEST['name'])){
+  if(empty($_REQUEST['name']))
+  {
     $nameError= "*Name Required";
-  }else{
+  }
+  else
+  {
      $name=$_REQUEST['name'];
      
     if(!preg_match("/^[a-zA-z]*$/", $name))
@@ -18,18 +21,18 @@ if(isset($_REQUEST["SUBMIT"]))
     }
   }
 
-  if(empty($_REQUEST["id"]))
+  if(empty($_REQUEST["nid"]))
   {
-    $idError = "*Id Required";
+    $nidError = "*NID Required";
   }
   else
   {
-    $id = $_REQUEST["id"];
+    $nid = $_REQUEST["nid"];
 
-    $idValidation = strlen($id);  
-    if ($idValidation > 12)
+    $nidValidation = strlen($nid);  
+    if ($nidValidation > 12)
     {
-      $idError = "Invalid Id!";
+      $nidError = "Invalid NID!";
     }
   }
 
@@ -88,15 +91,6 @@ if(isset($_REQUEST["SUBMIT"]))
     $birth = $_REQUEST["birth"];
   }
 
-  if(empty($_REQUEST["blood"]))
-  {
-    $bloodError = "*Select Your Blood-Group";
-  }
-  else
-  {
-    $blood = $_REQUEST["blood"];
-  }
-
   if(empty($_REQUEST["nmbr"]))
   {
     $nmbrError = "*Number Required";
@@ -138,18 +132,17 @@ if(isset($_REQUEST["SUBMIT"]))
 
   if($haserror!=1)
   {
-    $mydb= new Model();
-    $conobj= $mydb->Opencon();
-    $result=$mydb->AddEmployee($conobj,"employee",$_REQUEST["name"],$_REQUEST["id"],$_REQUEST["nationality"],
-    $_REQUEST["email"], $_REQUEST["pass"],$_REQUEST["birth"],$_REQUEST["blood"],$_REQUEST["nmbr"], $_REQUEST["gender"],$_REQUEST["address"]);
-
-    if($result===TRUE)
+     $mydbadd = new Model();
+     $conobj2 = $mydbadd->OpenCon();
+     $result2=$mydbadd->AddEmployee1($conobj2,"addemployee",$_REQUEST["name"],$_REQUEST["nid"],$_REQUEST["nationality"],$_REQUEST["email"],$_REQUEST["pass"],$_REQUEST["birth"],$_REQUEST["nmbr"],$_REQUEST["gender"],$_REQUEST["address"]);
+ 
+     if($result2===TRUE)
     {
-       echo "Successfully Added";
+       echo "Successfully Added!";
     }
    else
    {
-      echo "Error Occurred".$conobj->error;
+      echo "Error Occurred".$conobj2->error;
    }
  }
    else
@@ -158,4 +151,5 @@ if(isset($_REQUEST["SUBMIT"]))
    }
 
 }
+  
 ?>

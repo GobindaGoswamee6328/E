@@ -7,8 +7,8 @@ include '../controller/searchemployeename.php';
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Search Employee Name</title>
+<head>
+       <link rel="stylesheet" href="../css/searchemployeename.css">
     </head>
 
     <body>

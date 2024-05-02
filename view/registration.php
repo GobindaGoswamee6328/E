@@ -4,103 +4,92 @@ include '../controller/registrationcontrol.php';
 
 <!DOCTYPE html>
 <html>
+<head>
+    <link rel="stylesheet" href="../css/registration.css">
+</head>
   <body>
-    <form action="" method="POST">
+    <form action="" method="POST"  onsubmit="return validateForm()">
         <fieldset>
         <legend><h1> Employee Registration Form </h1></legend>
-            <table>
+        <p id="display"></p>
+        <table>
                 <tr>
-                    <td><label> Full Name: </label></td>
-                    <td><input type="text" name="name">
+                    <td><label> Name: </label></td>
+                    <td><input type="text" name="name" id="name">
                     <?php echo $nameError;?></td>
                 </tr>
 
                 <tr>
-                    <td><label> ID: </label></td>
-                    <td><input type="text" name="id">
-                    <?php echo $idError; ?></td>
+                    <td><label> NID: </label></td>
+                    <td><input type="text" name="nid" id="nid">
+                    <?php echo $nidError;?></td>
                 </tr>
 
                 <tr>
                     <td><label> Nationality: </label></td>
-                    <td><input type="text" name="nationality">
+                    <td><input type="text" name="nationality" id="nationality">
                     <?php echo $nationalityError; ?></td>
                 </tr>
 
+                
                 <tr>
-                    <td><label> Email Address: </label></td>
-                    <td><input type="text" name="email">
+                    <td><label> Email: </label></td>
+                    <td><input type="text" name="email" id="email">
                     <?php echo $emailError;?></td>
                 </tr>
 
                 <tr>
                     <td><label> Password: </label></td>
-                    <td><input type="password" name="pass">
+                    <td><input type="password" name="pass" id="pass">
                     <?php echo $passError;?></td>
                 </tr>
 
                 <tr>
-                    <td><label> Date of Birth: </label></td>
-                    <td><input type="date" name="birth">
+                    <td><label> Birthdate: </label></td>
+                    <td><input type="date" name="birth" id="birth">
                     <?php echo $birthError;?></td>
                 </tr>
 
                 <tr>
-                    <td><label> Blood Group: </label></td>
-                        
-                        <td><select id="blood" name="blood">
-                            <option value="A+">A+</option>
-                            <option value="A-">A-</option>
-                            <option value="B+">B+</option>
-                            <option value="B-">B-</option>
-                            <option value="AB+">AB+</option>
-                            <option value="AB-">AB-</option>
-                            <?php echo $bloodError; ?> </td>
-                        </select>
-                </tr>
-
-                <tr>
-                    <td><label> Contract Number: </label></td>
-                    <td><input type="text" name="nmbr">
+                    <td><label> Number: </label></td>
+                    <td><input type="text" name="nmbr" id="nmbr">
                     <?php echo $nmbrError;?></td>
                 </tr>
 
                 <tr>
                     <td><label> Gender: </label></td>
-                    <td><input type="radio" name="gender" value="male">Male
-                    <input type="radio" name="gender" value="female">Female
-                    <input type="radio" name="gender" value="other">Other
+                    <td><input type="radio" name="gender" value="male" id="genderMale">Male
+                    <input type="radio" name="gender" value="female" id="genderFeMale">Female
+                    <input type="radio" name="gender" value="other" id="genderOther">Other
                     <?php echo $genderError;?></td>
                 </tr>
 
                 <tr>
                     <td><label> Address: </label></td>
-                    <td><textarea rows="3" cols="30" name="address"></textarea>
+                    <td><textarea rows="3" cols="30" name="address" id="address"></textarea>
                     <?php echo $addressError;?></td>
                 </tr>
 
                 <tr>
-                    <td><td><input type="submit" name="SUBMIT" value="SUBMIT">
+                    <td><td><input type="submit" name="ADD" value="ADD">
                     <input type="submit" name="RESET" value="RESET"></td></td>
                 </tr>
-
+                
             </table>
-
         </fieldset>
+    </form>
 
-      </form>
-    
-        <form>
+    <form>
           <fieldset>
             <table>
             <tr>
-                <td> Full Name: </td>
+                <td> Name: </td>
                 <td><?php echo $name;?>
             </tr>
 
             <tr>
-                <td> Id: </td>
-                <td><?php echo $id;?>
+                <td> NID NO: </td>
+                <td><?php echo $nid;?>
             </tr>
 
             <tr>
@@ -124,11 +113,6 @@ include '../controller/registrationcontrol.php';
             </tr>
 
             <tr>
-                <td> Blood Group: </td>
-                <td><?php echo $blood;?>
-            </tr>
-
-            <tr>
                 <td> Contract Number: </td>
                 <td><?php echo $nmbr;?>
             </tr>
@@ -147,6 +131,6 @@ include '../controller/registrationcontrol.php';
           </fieldset>
 
         </form>
+        <script src="../js/registration.js"></script>
   </body>
-
 </html>

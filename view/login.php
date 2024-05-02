@@ -21,11 +21,16 @@ include '../controller/logincontrol.php';
 
                 <tr>
                     <td><label> Password: </label></td>
-                    <td><input type="password" name="pass" id="pass"> <div id ="emailerror"></div></td>
+                    <td><input type="password" name="pass" id="pass"> <div id ="passerror"></div></td>
                 </tr>
 
                 <tr>
                     <td><td><input type="submit" name="login" class="button submit" value="Login"></td></td>
+                </tr>
+
+                <tr>
+                    <td><td>Don't have an account? <a href="../view/registration.php">Register</a></td></td>
+                
                 </tr>
               </table>
           </fieldset>

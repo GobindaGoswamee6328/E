@@ -28,12 +28,11 @@ if(isset($_REQUEST['searchBox'])){
          function getShowSearchData($result)
          {
             echo("<table>");
-            echo("<th>Name </th><th>Age </th> <th>Gender </th> <th>Registration NO </th> <th>Registration Date </th> <th>Address</th><th>Hospital Name </th><th>Vaccine Name </th><th>Vaccinated Date </th>");
+            echo("<th>Name </th><th>Gender </th> <th>Registration NO </th> <th>Registration Date </th> <th>Address</th><th>Hospital Name </th><th>Vaccine Name </th><th>Vaccinated Date </th>");
 
             foreach($result as $row){
                 echo("<tr>");
                 echo("<td>".$row['name']."</td>");
-                echo("<td>".$row['age']."</td>");
                 echo("<td>".$row['gender']."</td>");
                 echo("<td>".$row['nmbr']."</td>");
                 echo("<td>".$row['registration']."</td>");

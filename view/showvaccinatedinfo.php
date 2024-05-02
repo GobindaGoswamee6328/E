@@ -16,12 +16,11 @@ include '../controller/showvaccinecontrol.php';
     
         if($result->num_rows>0){
             echo("<table>");
-            echo("<th>Name </th><th>Age </th> <th>Gender </th> <th>RegistrationNO </th> <th>RegistrationDate </th> <th>Address</th> <th>Hospital </th> <th>VaccineName </th><th>VaccinatedDate </th>");
+            echo("<th>Name </th><th>Gender </th> <th>RegistrationNO </th> <th>RegistrationDate </th> <th>Address</th> <th>Hospital </th> <th>VaccineName </th><th>VaccinatedDate </th>");
             
             foreach($result as $row){
                 echo("<tr>");
                 echo("<td>".$row['name']."</td>");
-                echo("<td>".$row['age']."</td>");
                 echo("<td>".$row['gender']."</td>");
                 echo("<td>".$row['nmbr']."</td>");
                 echo("<td>".$row['registration']."</td>");
